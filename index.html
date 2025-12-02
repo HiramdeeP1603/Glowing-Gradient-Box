@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gradient box</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body{
+            background: #060c21;
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .box{
+            width: 300px;
+            height: 400px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: #060c21;
+        }
+        .box::before{
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: white;
+            z-index: -1;
+        }
+        .box::after{
+            content: "";
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            background: white;
+            z-index: -2;
+            filter: blur(40px);
+        }
+        .box::before,
+        .box::after{
+            background: linear-gradient(235deg, #89ff00, #060c21, #00bcd4);
+        }
+        .contant{
+            padding: 2rem;
+        }
+        .contant h1{
+            margin: 2rem 0;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="contant">
+            <h1>Gradient box</h1>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo, perferendis voluptate sunt deleniti minus
+            minima, dolorum, nobis atque quibusdam aspernatur veniam vero tempora?</p>
+        </div>
+    </div>
+</body>
+
+</html>
